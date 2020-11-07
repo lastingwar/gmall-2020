@@ -20,6 +20,7 @@
         <module>gmall-logger</module>
         <module>gmall-realtime</module>
         <module>gmall-canal</module>
+        <module>dw-chart</module>
     </modules>
 
     <properties>
