@@ -33,7 +33,7 @@ public class PublisherServiceImpl implements PublisherService {
         // 获取数据
         List<Map> maps = dauMapper.selectDauTotalHourMap(date);
         for (Map map : maps) {
-            result.put(map.get("lh").toString(),map.get("ct"));
+            result.put(map.get("LH").toString(),map.get("CT"));
         }
         return result;
     }
