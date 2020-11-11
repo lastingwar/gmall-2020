@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper SYSTEM "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.atguigu.gmall.publisher.mapper.DauMapper">
+<mapper namespace="com.lastingwar.gmall.publisher.mapper.DauMapper">
     <select id="selectDauTotal" resultType="Integer">
         select count(*) from gmall2020_dau where  logdate=#{date}
     </select>
