@@ -1,5 +1,6 @@
 package com.lastingwar.gmall.publisher.service;
 
+import java.io.IOException;
 import java.util.Map;
 
 /**
@@ -17,4 +18,5 @@ public interface PublisherService {
     public Map getOrderAmountHour(String date);
 
 
+    public String getSaleDetail(String date, Integer startpage, Integer size, String keyword) throws IOException;
 }

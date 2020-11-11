@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -23,6 +24,11 @@ public class PublisherController {
     @Autowired
     private PublisherService publisherService;
 
+    /**
+     * 日活
+     * @param date
+     * @return
+     */
     @RequestMapping("realtime-total")
     public String getDauTotal(@RequestParam("date") String date) {
         // 1 创建集合存放结果
@@ -57,6 +63,12 @@ public class PublisherController {
         return JSONObject.toJSONString(result);
     }
 
+    /**
+     * 小时日活
+     * @param id
+     * @param date
+     * @return
+     */
     @RequestMapping("realtime-hours")
     public String getDauHours(@RequestParam("id") String id,
                               @RequestParam("date") String date) {
@@ -87,5 +99,15 @@ public class PublisherController {
         result.put("yesterday",yesterdayMap);
 
         return JSONObject.toJSONString(result);
+    }
+
+    @RequestMapping("sale_detail")
+    public String getSaleDetail(@RequestParam("date")String date,
+                                @RequestParam("startpage")Integer startpage,
+                                @RequestParam("size")Integer size,
+                                @RequestParam("keyword")String keyword) throws IOException {
+
+
+        return  publisherService.getSaleDetail(date,startpage,size,keyword);
     }
 }

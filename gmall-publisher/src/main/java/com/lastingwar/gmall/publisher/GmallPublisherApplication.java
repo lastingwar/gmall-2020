@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan(basePackages = "com.atguigu.gmall.publisher.mapper")
+@MapperScan(basePackages = "com.lastingwar.gmall.publisher.mapper")
 public class GmallPublisherApplication {
 
     public static void main(String[] args) {

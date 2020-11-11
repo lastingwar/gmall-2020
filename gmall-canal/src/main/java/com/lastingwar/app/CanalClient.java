@@ -111,12 +111,12 @@ public class CanalClient {
                 jsonObject.put(column.getName(),column.getValue());
             }
             System.out.println(jsonObject);
-            // 添加随机睡眠时间模仿网络延迟
-            try {
-                Thread.sleep(new Random().nextInt(5) * 1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+//            // 添加随机睡眠时间模仿网络延迟
+//            try {
+//                Thread.sleep(new Random().nextInt(5) * 1000);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
 
             //发送数据至Kafka,主题保存在common中
             MyKafkaSender.send(topic,jsonObject.toString());
